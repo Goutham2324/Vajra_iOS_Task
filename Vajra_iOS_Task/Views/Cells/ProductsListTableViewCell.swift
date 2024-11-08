@@ -13,12 +13,23 @@ class ProductsListTableViewCell: UITableViewCell {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
     
+    private let viewModel = ProductsListViewModel()
+    
     func populateCell(for model: Products) {
         productTitleLabel.textAlignment = .center
         productTitleLabel.numberOfLines = 0
         
+        productImageView.contentMode = .scaleAspectFill
+        
         productImageView.image = UIImage(named: "dummy_produt")
+        
+        viewModel.imageCacheService.loadImage(from: model.image.src) { image in
+            DispatchQueue.main.async {
+                self.productImageView.image = image
+            }
+        }
         productTitleLabel.text = model.title
+        
     }
     
 }

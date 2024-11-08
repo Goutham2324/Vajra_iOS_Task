@@ -17,7 +17,10 @@ extension ProductsListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        
+        let heightForCell = (viewModel.productsData[indexPath.row].image.height)/2 + 30
+        
+        return CGFloat(heightForCell)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,6 +29,8 @@ extension ProductsListViewController: UITableViewDataSource {
         }
         
         cell.populateCell(for: viewModel.productsData[indexPath.row])
+        
+        cell.selectionStyle = .none
         
         return cell
     }

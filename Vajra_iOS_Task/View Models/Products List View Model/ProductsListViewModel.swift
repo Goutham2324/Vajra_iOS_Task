@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ProductsListViewModelProtocol: AnyObject {
     func didUpdateDataSource()
@@ -14,6 +15,7 @@ protocol ProductsListViewModelProtocol: AnyObject {
 class ProductsListViewModel {
     
     let networkService = NetworkService()
+    let imageCacheService = ImageCacheService()
     
     weak var delegate: ProductsListViewModelProtocol?
     
@@ -31,5 +33,8 @@ class ProductsListViewModel {
         }
     }
     
+    func loadImage(for urlString: String, completion: @escaping (UIImage?) -> Void) {
+        imageCacheService.loadImage(from: urlString, completion: completion)
+    }
     
 }
