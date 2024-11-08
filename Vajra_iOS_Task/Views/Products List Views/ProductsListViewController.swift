@@ -17,6 +17,7 @@ class ProductsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Products"
         setUpTableView()
         viewModel.delegate = self
         fetchProducts()
