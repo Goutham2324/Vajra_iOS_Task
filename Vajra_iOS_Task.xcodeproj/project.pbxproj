@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		78288F6A2CDE68A900F0DD82 /* Exceptions for "Vajra_iOS_Task" folder in "Vajra_iOS_Task" target */ = {
+		78288FE52CDE6C1500F0DD82 /* Exceptions for "Vajra_iOS_Task" folder in "Vajra_iOS_Task" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -21,10 +21,10 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		78288F5A2CDE68A800F0DD82 /* Vajra_iOS_Task */ = {
+		78288FDB2CDE6C1500F0DD82 /* Vajra_iOS_Task */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				78288F6A2CDE68A900F0DD82 /* Exceptions for "Vajra_iOS_Task" folder in "Vajra_iOS_Task" target */,
+				78288FE52CDE6C1500F0DD82 /* Exceptions for "Vajra_iOS_Task" folder in "Vajra_iOS_Task" target */,
 			);
 			path = Vajra_iOS_Task;
 			sourceTree = "<group>";
@@ -45,7 +45,7 @@
 		78288F4F2CDE68A800F0DD82 = {
 			isa = PBXGroup;
 			children = (
-				78288F5A2CDE68A800F0DD82 /* Vajra_iOS_Task */,
+				78288FDB2CDE6C1500F0DD82 /* Vajra_iOS_Task */,
 				78288F592CDE68A800F0DD82 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				78288F5A2CDE68A800F0DD82 /* Vajra_iOS_Task */,
+				78288FDB2CDE6C1500F0DD82 /* Vajra_iOS_Task */,
 			);
 			name = Vajra_iOS_Task;
 			packageProductDependencies = (

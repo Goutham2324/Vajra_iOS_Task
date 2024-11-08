@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8t-0m-fT2">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Products List View Controller-->
+        <scene sceneID="qHu-rA-iu5">
+            <objects>
+                <viewController id="W8t-0m-fT2" customClass="ProductsListViewController" customModule="Vajra_iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5SD-tC-DIf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Bu-Ef-ta2">
+                                <rect key="frame" x="8" y="67" width="377" height="743"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductsListTableViewCell" rowHeight="352" id="wKa-Jy-szc" customClass="ProductsListTableViewCell" customModule="Vajra_iOS_Task" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="352"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wKa-Jy-szc" id="vVi-42-LzX">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="352"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="99H-fo-dYN">
+                                                    <rect key="frame" x="28" y="19" width="321" height="281.66666666666669"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsK-ed-yHP">
+                                                    <rect key="frame" x="28" y="312.66666666666669" width="321" height="20.333333333333314"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YsK-ed-yHP" firstAttribute="leading" secondItem="vVi-42-LzX" secondAttribute="leadingMargin" constant="8" id="1U3-Im-6vc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YsK-ed-yHP" secondAttribute="trailing" constant="8" id="8bJ-Rh-qOI"/>
+                                                <constraint firstItem="99H-fo-dYN" firstAttribute="leading" secondItem="vVi-42-LzX" secondAttribute="leadingMargin" constant="8" id="SqG-8d-z6r"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="99H-fo-dYN" secondAttribute="trailing" constant="8" id="bky-wi-lbj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YsK-ed-yHP" secondAttribute="bottom" constant="8" id="dt9-nh-1ES"/>
+                                                <constraint firstItem="99H-fo-dYN" firstAttribute="top" secondItem="vVi-42-LzX" secondAttribute="topMargin" constant="8" id="uGk-u8-Jsi"/>
+                                                <constraint firstItem="YsK-ed-yHP" firstAttribute="top" secondItem="99H-fo-dYN" secondAttribute="bottom" constant="12" id="yYv-et-fJ1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productImageView" destination="99H-fo-dYN" id="ddK-xp-aUx"/>
+                                            <outlet property="productTitleLabel" destination="YsK-ed-yHP" id="1iG-vo-pos"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MuH-gK-jTF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Bu-Ef-ta2" firstAttribute="top" secondItem="MuH-gK-jTF" secondAttribute="top" constant="8" id="ANc-tw-JtB"/>
+                            <constraint firstItem="MuH-gK-jTF" firstAttribute="trailing" secondItem="6Bu-Ef-ta2" secondAttribute="trailing" constant="8" id="Rug-fX-p6J"/>
+                            <constraint firstItem="6Bu-Ef-ta2" firstAttribute="leading" secondItem="MuH-gK-jTF" secondAttribute="leading" constant="8" id="Vfy-Gq-V5b"/>
+                            <constraint firstItem="MuH-gK-jTF" firstAttribute="bottom" secondItem="6Bu-Ef-ta2" secondAttribute="bottom" constant="8" id="rOi-wy-uxs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="productsTableView" destination="6Bu-Ef-ta2" id="afc-Qc-eVR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWq-gL-36P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-564.12213740458014" y="-219.01408450704227"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
