@@ -13,12 +13,13 @@ class ProductsListViewController: UIViewController {
     @IBOutlet weak var productsTableView: UITableView!
     
     let viewModel = ProductsListViewModel()
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
         viewModel.delegate = self
-        viewModel.getProducts()
+        fetchProducts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +29,16 @@ class ProductsListViewController: UIViewController {
     func setUpTableView() {
         productsTableView.delegate = self
         productsTableView.dataSource = self
+        productsTableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+    
+    func fetchProducts() {
+        viewModel.getProducts()
+    }
+    
+    @objc func refreshData() {
+        fetchProducts()
     }
 }
 
@@ -37,6 +48,7 @@ extension ProductsListViewController: ProductsListViewModelProtocol {
     func didUpdateDataSource() {
         DispatchQueue.main.async {
             self.productsTableView.reloadData()
+            self.productsTableView.refreshControl?.endRefreshing()
         }
     }
 }
