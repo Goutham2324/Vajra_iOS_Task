@@ -36,6 +36,10 @@ extension ProductsListViewController: UITableViewDataSource {
 
 extension ProductsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let webVC = storyboard.instantiateViewController(withIdentifier: "ProductDetailsWebViewController") as? ProductDetailsWebViewController {
+            webVC.bodyHTML = viewModel.productsData[indexPath.row].bodyHTML
+            navigationController?.pushViewController(webVC, animated: true)
+        }
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W8t-0m-fT2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E0H-cZ-JNg">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Bu-Ef-ta2">
-                                <rect key="frame" x="8" y="67" width="377" height="743"/>
+                                <rect key="frame" x="8" y="111" width="377" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductsListTableViewCell" rowHeight="352" id="wKa-Jy-szc" customClass="ProductsListTableViewCell" customModule="Vajra_iOS_Task" customModuleProvider="target">
@@ -64,13 +64,48 @@
                             <constraint firstItem="MuH-gK-jTF" firstAttribute="bottom" secondItem="6Bu-Ef-ta2" secondAttribute="bottom" constant="8" id="rOi-wy-uxs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nnG-M8-ZJ6"/>
                     <connections>
                         <outlet property="productsTableView" destination="6Bu-Ef-ta2" id="afc-Qc-eVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWq-gL-36P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564.12213740458014" y="-219.01408450704227"/>
+            <point key="canvasLocation" x="1228.2442748091603" y="-218.3098591549296"/>
+        </scene>
+        <!--Product Details Web View Controller-->
+        <scene sceneID="x3n-3y-j01">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailsWebViewController" id="yGt-LP-Ow8" customClass="ProductDetailsWebViewController" customModule="Vajra_iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5xa-wj-SYk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="W9W-nF-yFz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ryP-14-4y5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59m-2P-b30" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2270.9923664122139" y="-217.60563380281693"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t2B-eg-8s9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E0H-cZ-JNg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a2D-kF-zUM">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="W8t-0m-fT2" kind="relationship" relationship="rootViewController" id="EfJ-Mh-aWs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQ8-dC-mnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301.52671755725191" y="-218.3098591549296"/>
         </scene>
     </scenes>
     <resources>

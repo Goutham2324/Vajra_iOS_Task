@@ -14,10 +14,10 @@ struct Article: Codable {
 struct Products: Codable {
     let id: Int
     let title: String
-    let bodyHTML: String?
+    let bodyHTML: String
     let image: Image
     
-    enum codingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case title
         case bodyHTML = "body_html"
