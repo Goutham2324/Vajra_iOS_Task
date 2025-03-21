@@ -22,9 +22,8 @@ extension ProductsListViewController: UITableViewDataSource {
         let imageWidth = CGFloat(product.image.width)
         let imageHeight = CGFloat(product.image.height)
         
-        // Ensure width is greater than 0 to avoid division by zero
-        guard imageWidth > 0 else { return 100 }
-
+        guard imageWidth > 0 else { return 100 } // Default height in case of zero width
+        
         let aspectRatio = imageHeight / imageWidth
         let calculatedHeight = tableView.frame.width * aspectRatio
         print("caluclated height 🔴🔴🔴🔴\(calculatedHeight)")

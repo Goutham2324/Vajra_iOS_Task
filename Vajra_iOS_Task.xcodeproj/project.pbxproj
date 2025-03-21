@@ -22,6 +22,7 @@
 		782890E62CE1F68400F0DD82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782890D32CE1F68400F0DD82 /* AppDelegate.swift */; };
 		782890E72CE1F68400F0DD82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782890D72CE1F68400F0DD82 /* SceneDelegate.swift */; };
 		78C795AA2D8D903B00D32121 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78C795A92D8D903B00D32121 /* Montserrat-Regular.ttf */; };
+		78C795AD2D8DA88100D32121 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C795AC2D8DA88100D32121 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		782890D52CE1F68400F0DD82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		782890D72CE1F68400F0DD82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		78C795A92D8D903B00D32121 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		78C795AC2D8DA88100D32121 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		782890D82CE1F68400F0DD82 /* Vajra_iOS_Task */ = {
 			isa = PBXGroup;
 			children = (
+				78C795AB2D8DA87500D32121 /* Extensions */,
 				782890BB2CE1F68400F0DD82 /* Models */,
 				782890BF2CE1F68400F0DD82 /* Resources */,
 				782890C22CE1F68400F0DD82 /* StoryBoard */,
@@ -212,6 +215,14 @@
 				782890D72CE1F68400F0DD82 /* SceneDelegate.swift */,
 			);
 			path = Vajra_iOS_Task;
+			sourceTree = "<group>";
+		};
+		78C795AB2D8DA87500D32121 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				78C795AC2D8DA88100D32121 /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				782890E42CE1F68400F0DD82 /* ProductsList+TableViewExtension.swift in Sources */,
 				782890E52CE1F68400F0DD82 /* ProductsListViewController.swift in Sources */,
 				782890E62CE1F68400F0DD82 /* AppDelegate.swift in Sources */,
+				78C795AD2D8DA88100D32121 /* String+Extensions.swift in Sources */,
 				782890E72CE1F68400F0DD82 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

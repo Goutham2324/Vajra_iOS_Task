@@ -12,25 +12,43 @@ class ProductsListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
+    @IBOutlet weak var productDescriptionLabel: UILabel!
     
     private let viewModel = ProductsListViewModel()
     
-    func populateCell(for model: Products) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+                
+        // Configure Title Label
         productTitleLabel.textAlignment = .center
         productTitleLabel.numberOfLines = 0
         productTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 16)
+        productTitleLabel.textColor = .black
         
+        // Configure Description Label
+        productDescriptionLabel.numberOfLines = 2
+        productDescriptionLabel.lineBreakMode = .byTruncatingTail
+        productDescriptionLabel.font = UIFont(name: "Montserrat-Regular", size: 12)
+        productDescriptionLabel.textColor = .darkGray
+        
+        // Configure Image View
         productImageView.contentMode = .scaleAspectFill
+        productImageView.clipsToBounds = true
+    }
+    
+    func populateCell(for model: Products) {
+        productTitleLabel.text = model.title
         
-        productImageView.image = UIImage(named: "dummy_produt")
-        
+        // Strip HTML tags & limit to two lines
+       productDescriptionLabel.text = model.summaryHTML.stripHTMLTags()
+               
+        // Load Image
+        productImageView.image = UIImage(named: "dummy_product") // Placeholder image
         viewModel.imageCacheService.loadImage(from: model.image.src) { image in
             DispatchQueue.main.async {
                 self.productImageView.image = image
             }
         }
-        productTitleLabel.text = model.title
-        
     }
     
 }

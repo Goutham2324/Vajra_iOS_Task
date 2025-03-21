@@ -16,12 +16,14 @@ struct Products: Codable {
     let title: String
     let bodyHTML: String
     let image: Image
+    let summaryHTML: String
     
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case bodyHTML = "body_html"
         case image
+        case summaryHTML = "summary_html"
     }
 }
 
