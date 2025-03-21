@@ -18,7 +18,7 @@ class ProductsListTableViewCell: UITableViewCell {
     func populateCell(for model: Products) {
         productTitleLabel.textAlignment = .center
         productTitleLabel.numberOfLines = 0
-        productTitleLabel.font = UIFont(name: "FontsFree-Net-Montserrat-SemiBold", size: 16)
+        productTitleLabel.font = UIFont(name: "Montserrat-SemiBold", size: 16)
         
         productImageView.contentMode = .scaleAspectFill
         

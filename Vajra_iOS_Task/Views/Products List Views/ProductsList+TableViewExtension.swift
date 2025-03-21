@@ -17,10 +17,18 @@ extension ProductsListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let product = viewModel.productsData[indexPath.row]
         
-        let heightForCell = (viewModel.productsData[indexPath.row].image.height)/2 + 30
+        let imageWidth = CGFloat(product.image.width)
+        let imageHeight = CGFloat(product.image.height)
         
-        return CGFloat(heightForCell)
+        // Ensure width is greater than 0 to avoid division by zero
+        guard imageWidth > 0 else { return 100 }
+
+        let aspectRatio = imageHeight / imageWidth
+        let calculatedHeight = tableView.frame.width * aspectRatio
+        print("caluclated height 🔴🔴🔴🔴\(calculatedHeight)")
+        return calculatedHeight + 30 // Add padding for other UI elements
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

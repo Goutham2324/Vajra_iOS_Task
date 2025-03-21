@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkService {
     
-    private let serviceURL: String = "https://run.mocky.io/v3/e45b34c9-195d-4a6e-922e-130335e8a657"
+    private let serviceURL: String = "https://run.mocky.io/v3/bc60eb35-f1a1-415f-8310-7f1fcfb32459"
     
     func getProductsData(completion: @escaping (Result<[Products], Error>) -> Void) {
         let request = URLRequest(url: URL(string: serviceURL)!)
