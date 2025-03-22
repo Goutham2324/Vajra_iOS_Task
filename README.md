@@ -12,5 +12,5 @@ $ open Vajra_iOS_Task.xcodeproj
 1. UIKit
 2. MVVM
 3. Image caching using NSCache
-4. Displays a list of photos fetched from the Lorem Picsum API.
+4. Displays a list of photos fetched from the run.mocky API.
 5. Pull-to-refresh functionality to reload the list.
