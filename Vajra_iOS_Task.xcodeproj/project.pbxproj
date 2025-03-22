@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7827335B2D8ED04000C834D7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827335A2D8ED04000C834D7 /* CoreDataManager.swift */; };
 		782890D92CE1F68400F0DD82 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 782890BC2CE1F68400F0DD82 /* Montserrat-SemiBold.ttf */; };
 		782890DA2CE1F68400F0DD82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782890BE2CE1F68400F0DD82 /* Assets.xcassets */; };
 		782890DB2CE1F68400F0DD82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782890C12CE1F68400F0DD82 /* Main.storyboard */; };
@@ -21,11 +22,13 @@
 		782890E52CE1F68400F0DD82 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782890D02CE1F68400F0DD82 /* ProductsListViewController.swift */; };
 		782890E62CE1F68400F0DD82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782890D32CE1F68400F0DD82 /* AppDelegate.swift */; };
 		782890E72CE1F68400F0DD82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782890D72CE1F68400F0DD82 /* SceneDelegate.swift */; };
+		7850290B2D8ECFAD0054A3C6 /* ProductsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 785029092D8ECFAD0054A3C6 /* ProductsModel.xcdatamodeld */; };
 		78C795AA2D8D903B00D32121 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78C795A92D8D903B00D32121 /* Montserrat-Regular.ttf */; };
 		78C795AD2D8DA88100D32121 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C795AC2D8DA88100D32121 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7827335A2D8ED04000C834D7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		78288F582CDE68A800F0DD82 /* Vajra_iOS_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vajra_iOS_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		782890B82CE1F68400F0DD82 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		782890BC2CE1F68400F0DD82 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		782890D42CE1F68400F0DD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		782890D52CE1F68400F0DD82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		782890D72CE1F68400F0DD82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7850290A2D8ECFAD0054A3C6 /* ProductsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProductsModel.xcdatamodel; sourceTree = "<group>"; };
 		78C795A92D8D903B00D32121 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		78C795AC2D8DA88100D32121 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		782733592D8ED02A00C834D7 /* Core Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7827335A2D8ED04000C834D7 /* CoreDataManager.swift */,
+			);
+			path = "Core Data Manager";
+			sourceTree = "<group>";
+		};
 		78288F4F2CDE68A800F0DD82 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +154,7 @@
 		782890C72CE1F68400F0DD82 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				782733592D8ED02A00C834D7 /* Core Data Manager */,
 				782890C42CE1F68400F0DD82 /* Image Cache */,
 				782890C62CE1F68400F0DD82 /* Network Service */,
 			);
@@ -213,6 +226,7 @@
 				782890D42CE1F68400F0DD82 /* Info.plist */,
 				782890D62CE1F68400F0DD82 /* LaunchScreen.storyboard */,
 				782890D72CE1F68400F0DD82 /* SceneDelegate.swift */,
+				785029092D8ECFAD0054A3C6 /* ProductsModel.xcdatamodeld */,
 			);
 			path = Vajra_iOS_Task;
 			sourceTree = "<group>";
@@ -308,7 +322,9 @@
 				782890E22CE1F68400F0DD82 /* ProductsListTableViewCell.swift in Sources */,
 				782890E32CE1F68400F0DD82 /* ProductDetailsWebViewController.swift in Sources */,
 				782890E42CE1F68400F0DD82 /* ProductsList+TableViewExtension.swift in Sources */,
+				7827335B2D8ED04000C834D7 /* CoreDataManager.swift in Sources */,
 				782890E52CE1F68400F0DD82 /* ProductsListViewController.swift in Sources */,
+				7850290B2D8ECFAD0054A3C6 /* ProductsModel.xcdatamodeld in Sources */,
 				782890E62CE1F68400F0DD82 /* AppDelegate.swift in Sources */,
 				78C795AD2D8DA88100D32121 /* String+Extensions.swift in Sources */,
 				782890E72CE1F68400F0DD82 /* SceneDelegate.swift in Sources */,
@@ -536,6 +552,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		785029092D8ECFAD0054A3C6 /* ProductsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7850290A2D8ECFAD0054A3C6 /* ProductsModel.xcdatamodel */,
+			);
+			currentVersion = 7850290A2D8ECFAD0054A3C6 /* ProductsModel.xcdatamodel */;
+			path = ProductsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 78288F502CDE68A800F0DD82 /* Project object */;
 }

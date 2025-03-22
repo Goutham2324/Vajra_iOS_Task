@@ -13,28 +13,30 @@ protocol ProductsListViewModelProtocol: AnyObject {
 }
 
 class ProductsListViewModel {
-    
+
     let networkService = NetworkService()
     let imageCacheService = ImageCacheService()
-    
     weak var delegate: ProductsListViewModelProtocol?
-    
+
     private(set) var productsData: [Products] = []
-    
+
     func getProducts() {
         networkService.getProductsData { [weak self] result in
             switch result {
             case .success(let products):
                 self?.productsData = products
-                self?.delegate?.didUpdateDataSource()
+                CoreDataManager.shared.saveProducts(products)
             case .failure(let error):
-                print(error)
+                print("Network request failed: \(error.localizedDescription)")
+                self?.productsData = CoreDataManager.shared.fetchProducts()
             }
+            self?.delegate?.didUpdateDataSource()
         }
     }
-    
-    func loadImage(for urlString: String, completion: @escaping (UIImage?) -> Void) {
-        imageCacheService.loadImage(from: urlString, completion: completion)
+
+
+    private func loadFromCoreData() {
+        self.productsData = CoreDataManager.shared.fetchProducts()
+        self.delegate?.didUpdateDataSource()
     }
-    
 }

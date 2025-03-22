@@ -39,16 +39,22 @@ class ProductsListTableViewCell: UITableViewCell {
     func populateCell(for model: Products) {
         productTitleLabel.text = model.title
         
-        // Strip HTML tags & limit to two lines
-       productDescriptionLabel.text = model.summaryHTML.stripHTMLTags()
-               
-        // Load Image
-        productImageView.image = UIImage(named: "dummy_product") // Placeholder image
-        viewModel.imageCacheService.loadImage(from: model.image.src) { image in
+        // Strip HTML tags & set description
+        productDescriptionLabel.text = model.summaryHTML.stripHTMLTags()
+
+        // Set placeholder image
+        productImageView.image = UIImage(named: "dummy_product")
+
+        // Load the correct image using the product ID
+        viewModel.imageCacheService.loadImage(for: model.id, from: model.image.src) { [weak self] id, image in
             DispatchQueue.main.async {
-                self.productImageView.image = image
+                // Ensure the image belongs to the correct model by matching the id
+                if id == model.id {
+                    self?.productImageView.image = image
+                }
             }
         }
     }
+
     
 }

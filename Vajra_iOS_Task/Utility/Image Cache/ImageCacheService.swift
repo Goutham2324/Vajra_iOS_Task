@@ -9,33 +9,37 @@ import Foundation
 import UIKit
 
 class ImageCacheService {
-    private let cache = NSCache<NSString, UIImage>()
     
-    // Retrieve image from cache if it exists, otherwise download it
-    func loadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
-        let cacheKey = NSString(string: urlString)
-        
-        // Check if image is already cached
-        if let cachedImage = cache.object(forKey: cacheKey) {
-            completion(cachedImage)
+    private let fileManager = FileManager.default
+
+    private func imagePath(for id: Int) -> URL? {
+        guard let documentsDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else { return nil }
+        return documentsDirectory.appendingPathComponent("\(id).png")
+    }
+    // the same method takes care of saving and loading the image from file systems
+    func loadImage(for id: Int, from urlString: String, completion: @escaping (Int, UIImage?) -> Void) {
+        if let localPath = imagePath(for: id), fileManager.fileExists(atPath: localPath.path) {
+            let image = UIImage(contentsOfFile: localPath.path)
+            completion(id, image)
             return
         }
-        
-        // Download image if not in cache
+
         guard let url = URL(string: urlString) else {
-            completion(nil)
+            completion(id, nil)
             return
         }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let self = self, let data = data, let image = UIImage(data: data), error == nil else {
-                completion(nil)
+
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
+            guard let self = self, let data = data, let image = UIImage(data: data) else {
+                completion(id, nil)
                 return
             }
-            
-            // Cache the image after downloading
-            self.cache.setObject(image, forKey: cacheKey)
-            completion(image)
+
+            if let localPath = self.imagePath(for: id) {
+                try? data.write(to: localPath) // Cache the image locally
+            }
+
+            completion(id, image)
         }.resume()
     }
 }
