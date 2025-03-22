@@ -11,6 +11,6 @@ $ open Vajra_iOS_Task.xcodeproj
 # Features and Development Details
 1. UIKit
 2. MVVM
-3. Image caching using NSCache
-4. Displays a list of photos fetched from the run.mocky API.
+3. Offline support - saving products details in the coredata and the images as png in file systems
+4. Displays a list of products fetched from the run.mocky API.
 5. Pull-to-refresh functionality to reload the list.
