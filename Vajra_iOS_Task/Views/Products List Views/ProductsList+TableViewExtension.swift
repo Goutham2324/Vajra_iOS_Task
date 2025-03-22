@@ -26,7 +26,6 @@ extension ProductsListViewController: UITableViewDataSource {
         
         let aspectRatio = imageHeight / imageWidth
         let calculatedHeight = tableView.frame.width * aspectRatio
-        print("caluclated height 🔴🔴🔴🔴\(calculatedHeight)")
         return calculatedHeight + 30 // Add padding for other UI elements
     }
     

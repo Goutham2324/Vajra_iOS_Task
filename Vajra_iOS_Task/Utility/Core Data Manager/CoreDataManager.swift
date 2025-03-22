@@ -20,9 +20,6 @@ class CoreDataManager {
             } else {
                 print("✅ Successfully loaded: \(description)")
             }
-
-            // Log loaded entities to confirm model is loaded
-            print("Entities: \(container.managedObjectModel.entities.map { $0.name ?? "Unknown" })")
         }
         return container
     }()

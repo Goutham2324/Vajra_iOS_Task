@@ -32,7 +32,8 @@ class ProductsListTableViewCell: UITableViewCell {
         productDescriptionLabel.textColor = .darkGray
         
         // Configure Image View
-        productImageView.contentMode = .scaleAspectFill
+        productImageView.contentMode = .scaleAspectFit
+        // made scaleAspectFit as wanted to display the whole image 
         productImageView.clipsToBounds = true
     }
     
@@ -55,6 +56,4 @@ class ProductsListTableViewCell: UITableViewCell {
             }
         }
     }
-
-    
 }

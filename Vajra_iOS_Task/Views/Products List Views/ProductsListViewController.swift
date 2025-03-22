@@ -11,6 +11,7 @@ import UIKit
 class ProductsListViewController: UIViewController {
     
     @IBOutlet weak var productsTableView: UITableView!
+    private var activityIndicator: UIActivityIndicatorView!
     
     let viewModel = ProductsListViewModel()
     let refreshControl = UIRefreshControl()
@@ -19,12 +20,19 @@ class ProductsListViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Products"
         setUpTableView()
+        setUpActivityIndicator()
         viewModel.delegate = self
         fetchProducts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    func setUpActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
     }
     
     func setUpTableView() {
@@ -34,7 +42,18 @@ class ProductsListViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
+    func showLoading() {
+        activityIndicator.startAnimating()
+        productsTableView.isHidden = true
+    }
+    
+    func hideLoading() {
+        activityIndicator.stopAnimating()
+        productsTableView.isHidden = false
+    }
+    
     func fetchProducts() {
+        showLoading()
         viewModel.getProducts()
     }
     
@@ -50,6 +69,7 @@ extension ProductsListViewController: ProductsListViewModelProtocol {
         DispatchQueue.main.async {
             self.productsTableView.reloadData()
             self.productsTableView.refreshControl?.endRefreshing()
+            self.hideLoading()
         }
     }
 }
