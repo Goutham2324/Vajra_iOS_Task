@@ -45,7 +45,7 @@ class CoreDataManager {
             entity.summaryHTML = product.summaryHTML
 
             // Save image in the cache
-            ImageCacheService().loadImage(for: product.id, from: product.image.src) { _,_  in }
+            //ImageCacheService().loadImage(for: product.id, from: product.image.src) { _,_  in }
         }
 
         do {
